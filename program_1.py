@@ -1,19 +1,33 @@
-# Program #1: Initials
-# Write a program that gets a string containing a person's first, middle, and last names, 
-# and displays their first, middle, and last initials.  
-# For example, if the user enters John William Smith, the program should display J. W. S.
+#Timothy Foster, 3/4/25, Initials Program
 
-# Add your logic starting on line 11
+#Define the function to get user input.
+def get_user_name():
 
-def initials_generator(personsName):
+    #Define the list.
+    user_name = []
 
-    personsInitials = ""
-    #    Add your logic here
+    #Get user input.
+    user_name.append(str(input("Enter your first name.")))
+    user_name.append(str(input("Enter your middle name.")))
+    user_name.append(str(input("Enter your last name.")))
 
-    return personsInitials.strip()
+    #Return the variable.
+    return user_name
 
-personsName = input('Enter the users first, middle, and last name')
+#Define the mainline.
+def main():
 
-initials = initials_generator(personsName)
+    #Call the above function and assign it to a new list.
+    names = get_user_name()
 
-print(initials)
+    #Assign the first parts of the user-inputed strings to new variables.
+    firstinitial = names[0][0]
+    middleinitial = names[1][0]
+    lastinitial = names[2][0]
+
+    #Print the results.
+    print(f"Your intials are {firstinitial}. {middleinitial}. {lastinitial}.")
+
+
+if __name__ == "__main__":
+    main()
