@@ -1,23 +1,42 @@
-# Program #2: Word Separator
-# Write a program that accepts as input a sentence in which all of the words are run together, 
-# but the first character of each word is uppercase.  
-# Convert the sentence to a string in which the words are separated by spaces, 
-# and the first word starts with an uppercase.  
-# For example the string "StopAndSmellTheRoses" would be converted to "Stop and smell the roses."
+#Timothy Foster, 3/4/25, Word Separator Program
 
-# Start your changes on line 13
+#Define function.
+def get_user_phrase():
 
-def word_separator(sentence):
+    #Get user input.
+    user_phrase = str(input('Enter a phrase without spaces but with each new word capitalized. "StopAndSmellTheRoses" would be an example.'))
 
-    new_sentence = ""
-    #    Add your logic here
+    #Return the string.
+    return user_phrase
 
-    return new_sentence.strip()
+#Define main function.
+def main():
 
-# Example usage
+    #Define the phrase variable
+    phrase = get_user_phrase()
 
-sentence = "StopAndSmellTheRoses"
+    #Define the true phrase variable.
+    truePhrase = ""
 
-new_sentence = word_separator(sentence)
+    #Get the number of letters in the string.
+    letter_count = len(phrase)
 
-print(new_sentence)
+    #Run a for loop for the number of letters.
+    for i in range(letter_count):
+
+        #If a letter in the phrase is uppercase and not the first character, there is a space added and it is made lowercase.
+
+        if phrase[i].isupper() and i != 0:
+            truePhrase = truePhrase + " "
+            truePhrase = truePhrase + phrase[i].lower()
+
+        #Otherwise, just add the character to the phrase.
+
+        else:
+            truePhrase = truePhrase + phrase[i]
+
+#Print the results.
+    print(truePhrase)
+
+if __name__ == "__main__":
+    main()
